@@ -1,2 +1,2 @@
 # Dhana's Portofolio
-Visit here <a href="https://dhaaana.github.io">dhaaana.github.io<a>
+Visit here <a target="_blank" href="https://dhaaana.github.io">dhaaana.github.io<a>
