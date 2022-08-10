@@ -28,16 +28,14 @@ const { title } = Astro.props as Props;
     <a href='/' class='font-black transition-transform hover:rotate-[10deg]'>
       DHANA
     </a>
-    <div>
-      <ul class='flex gap-x-6'>
-        <li><a href='/'>Home</a></li>
-        <li><a href='#experience'>Experience</a></li>
-        <li><a href='#project'>Project</a></li>
-        <li>
-          <a href='https://github.com/dhaaana'>Github</a>
-        </li>
-      </ul>
-    </div>
+    <ul class='hidden sm:flex gap-x-6'>
+      <li><a href='/'>Home</a></li>
+      <li><a href='#experience'>Experience</a></li>
+      <li><a href='#project'>Project</a></li>
+      <li>
+        <a href='https://github.com/dhaaana'>Github</a>
+      </li>
+    </ul>
   </nav>
   <div>
     <slot />

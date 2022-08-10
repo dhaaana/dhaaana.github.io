@@ -7,15 +7,31 @@ export default function Experiences() {
 
   const { company, dates, duties, title } = jobs[value];
   return (
-    <section className='h-[24rem]'>
-      <div className='flex h-full gap-x-2'>
+    <div className='sm:h-[24rem]'>
+      <div className='flex sm:flex-row flex-col h-full gap-x-2 gap-y-4'>
         {/* btn container */}
-        <div className='relative'>
-          <div className='sticky top-[4rem] flex flex-col items-center justify-center bg-white/[69%] shadow-lg p-3 rounded-md gap-y-2'>
+        <div className='bg-white/[69%] shadow-lg p-3 rounded-md sm:hidden block'>
+          <select
+            name='company'
+            id='company'
+            onChange={(e) => setValue(e.target.value)}
+            className='w-full p-3 rounded-md bg-gradient-to-r from-violet-100 to-violet-200 text-violet-700 font-semibold focus:outline-none focus:ring-4 focus:ring-violet-200'
+          >
+            {jobs.map((item, index) => {
+              return (
+                <option key={index} value={index}>
+                  {item.company}
+                </option>
+              );
+            })}
+          </select>
+        </div>
+        <div className='hidden sm:block relative'>
+          <div className='sticky top-[4rem] flex sm:flex-col items-center justify-center bg-white/[69%] shadow-lg p-3 rounded-md gap-y-2'>
             {jobs.map((item, index) => {
               return (
                 <button
-                  key={item.id}
+                  key={index}
                   onClick={() => setValue(index)}
                   className={`${
                     index === value &&
@@ -29,20 +45,20 @@ export default function Experiences() {
           </div>
         </div>
         {/* job info */}
-        <article className='px-8 py-6 bg-white/[69%] h-full rounded-md shadow-lg'>
-          <div className='flex justify-between items-start mb-4'>
-            <div>
+        <article className='px-5 sm:px-8 py-6 bg-white/[69%] h-full rounded-md shadow-lg'>
+          <div className='flex flex-col sm:flex-row items-center justify-between sm:items-start gap-y-2 mb-4'>
+            <div className='sm:text-left text-center'>
               <h2 className='font-semibold'>{title}</h2>
               <h4>{company}</h4>
             </div>
-            <p className='bg-violet-200 text-violet-700 px-3 py-1 text-sm font-semibold rounded-lg'>
+            <p className='bg-violet-200 text-violet-700 px-3 py-1 text-xs sm:text-sm font-semibold rounded-lg'>
               {dates}
             </p>
           </div>
           <ul className='space-y-2'>
             {duties.map((duty, index) => {
               return (
-                <li key={index} className='flex gap-x-3'>
+                <li key={index} className='flex gap-x-3 sm:text-base text-sm'>
                   <span>
                     <svg
                       xmlns='http://www.w3.org/2000/svg'
@@ -64,6 +80,6 @@ export default function Experiences() {
           </ul>
         </article>
       </div>
-    </section>
+    </div>
   );
 }
