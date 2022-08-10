@@ -11,4 +11,5 @@ export default defineConfig({
       external: ['svgo'],
     },
   },
+  site: 'https://dhaaana.github.io',
 });

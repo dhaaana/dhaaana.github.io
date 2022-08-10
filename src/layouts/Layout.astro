@@ -127,13 +127,6 @@ const { title } = Astro.props as Props;
       background-repeat: no-repeat;
     }
 
-    :global(@media (prefers-reduced-motion: no-preference)) {
-      .animated-underline {
-        transition: 0.3s ease;
-        transition-property: background-size, color, background-color,
-          border-color;
-      }
-    }
     :global(.animated-underline:hover),
     :global(.animated-underline:focus-visible) {
       background-size: 0 2px, 100% 2px;
