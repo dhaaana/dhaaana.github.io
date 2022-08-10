@@ -1,25 +1,67 @@
 ---
-//import "../styles/global.css";
 import Layout from '../layouts/Layout.astro';
+import Header from '../layouts/Header.astro';
+import ProjectCard from '../components/projects/ProjectCard.astro';
+import Experiences from '../components/experiences/Experiences.jsx';
+
+export interface IProjectData {
+  title: string;
+  href: string;
+  cover: string;
+  description: string;
+  isFeatured: boolean;
+  stack: string;
+}
+
+const projects = await Astro.glob<IProjectData>('../content/projects/*.md');
+const featured = projects.filter(
+  ({ frontmatter }) => frontmatter.isFeatured === true
+);
 ---
 
 <Layout title='Dhana'>
-  <header class='flex justify-center py-14 items-center flex-col'>
-    <div class='h1 font-extrabold'>
-      <span
-        class='bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500'
-      >
-        Hello world!
-      </span>
+  <Header />
+  <section
+    class='flex flex-col items-center justify-center pb-14 pt-6 px-24'
+    id='experience'
+  >
+    <h2 class='font-bold mb-5'>My Experiences</h2>
+    <Experiences />
+  </section>
+  <section
+    class='flex flex-col items-center justify-center pb-14 pt-6 px-24'
+    id='project'
+  >
+    <h2 class='font-bold mb-5'>Featured Projects</h2>
+    <div class='flex flex-wrap gap-3 w-full'>
+      {featured.map((project) => (
+        <ProjectCard
+          title={project.frontmatter.title}
+          body={project.frontmatter.description}
+          href={project.frontmatter.href}
+          cover={project.frontmatter.cover}
+          stack={project.frontmatter.stack}
+        />
+      ))}
     </div>
-    <p>My name is <span class='font-semibold'>Ramadhana Rizqy Arifin</span></p>
-  </header>
-  <section class='flex justify-center w-1/2'>
-    <p class='border-2'>
-      Diligent and driven second year information system student looking to
-      leverage web development and organizational skills. Always interested in
-      learning something new, eager to further develop programming knowledge in
-      external and internal organization.
-    </p>
+    <a
+      href='/projects'
+      class='bg-gradient-to-r from-violet-500 to-violet-700 group flex items-center gap-x-2 mt-10 transition-transform focus:outline-none focus:ring-4 focus:ring-violet-300 hover:from-violet-500/[0.8] hover:to-violet-700/[0.8] hover:-translate-y-1 text-white font-semibold rounded px-5 py-3'
+      >See all projects <span
+        class='transition-transform group-hover:translate-x-2'
+      >
+        <svg
+          xmlns='http://www.w3.org/2000/svg'
+          class='h-5 w-5'
+          viewBox='0 0 20 20'
+          fill='currentColor'
+        >
+          <path
+            fill-rule='evenodd'
+            d='M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z'
+            clip-rule='evenodd'></path>
+        </svg>
+      </span>
+    </a>
   </section>
 </Layout>

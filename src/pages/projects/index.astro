@@ -1,0 +1,24 @@
+---
+import ProjectCard from '../../components/projects/ProjectCard.astro';
+import Layout from '../../layouts/Layout.astro';
+import type { IProjectData } from '../index.astro';
+
+const projects = await Astro.glob<IProjectData>('../../content/projects/*.md');
+---
+
+<Layout title='Dhana'>
+  <main class='flex flex-col items-center justify-center pb-14 pt-6 px-24'>
+    <h2 class='font-bold mb-5'>All Projects</h2>
+    <div class='flex flex-wrap justify-center gap-3 w-full'>
+      {projects.map((project) => (
+        <ProjectCard
+          title={project.frontmatter.title}
+          body={project.frontmatter.description}
+          href={project.frontmatter.href}
+          cover={project.frontmatter.cover}
+          stack={project.frontmatter.stack}
+        />
+      ))}
+    </div>
+  </main>
+</Layout>

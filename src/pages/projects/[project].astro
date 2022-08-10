@@ -1,0 +1,23 @@
+---
+import Layout from '../../layouts/Layout.astro';
+export async function getStaticPaths() {
+  const projects = await Astro.glob('../../content/projects/*.md');
+
+  return projects.map((project) => ({
+    params: {
+      project: project.frontmatter.href,
+    },
+    props: {
+      project,
+    },
+  }));
+}
+
+const { project } = Astro.props;
+---
+
+<Layout title='Dhana'>
+  <div>
+    <project.Content />
+  </div>
+</Layout>

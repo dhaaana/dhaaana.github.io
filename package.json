@@ -10,12 +10,17 @@
     "astro": "astro"
   },
   "devDependencies": {
+    "@astrojs/preact": "^1.0.0",
     "@astrojs/tailwind": "^0.2.5",
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
-    "astro": "^1.0.0-rc.7",
+    "astro": "^1.0.0",
     "husky": "^8.0.1",
+    "preact": "^10.10.1",
     "prettier": "^2.7.1",
     "prettier-plugin-astro": "^0.4.0"
+  },
+  "dependencies": {
+    "astro-icon": "^0.7.3"
   }
 }

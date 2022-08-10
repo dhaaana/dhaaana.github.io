@@ -1,0 +1,119 @@
+---
+import { Icon } from 'astro-icon';
+export interface Props {
+  title: string;
+  body: string;
+  href: string;
+  cover: string;
+  stack: string;
+}
+
+const { href, title, body, cover, stack } = Astro.props as Props;
+const stackArr = stack.split(', ');
+---
+
+<div class='link-card group'>
+  <a href={href} class='flex flex-col'>
+    <div>
+      <h2>
+        {title}
+        <span>&rarr;</span>
+      </h2>
+      <div
+        class='border-2 my-2 rounded-md shadow overflow-clip transition-color group-hover:border-violet-300'
+      >
+        <img src={`/images/${cover}`} alt='' />
+      </div>
+      <p class='text-sm'>
+        {body}
+      </p>
+    </div>
+    <div class='flex justify-between items-end grow'>
+      <p class='font-semibold'>Stack used:</p>
+      <div class='flex gap-x-1'>
+        {stackArr.map((stack: string) => {
+          const icons = stack.split(':');
+          return <Icon pack={icons[0]} name={icons[1]} />;
+        })}
+      </div>
+    </div>
+  </a>
+</div>
+<style>
+  :root {
+    --link-gradient: linear-gradient(
+      45deg,
+      var(--primary-color),
+      var(--secondary-color) 30%,
+      var(--color-border) 60%
+    );
+  }
+
+  .link-card {
+    list-style: none;
+    display: flex;
+    flex-basis: 32%;
+    padding: 0.15rem;
+    background-image: var(--link-gradient);
+    background-size: 400%;
+    border-radius: 0.5rem;
+    background-position: 100%;
+    transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .link-card a {
+    width: 100%;
+    text-decoration: none;
+    line-height: 1.4;
+    padding: 1em 1.3em;
+    border-radius: 0.35rem;
+    color: var(--text-color);
+    background-color: rgba(255, 255, 255, 0.69);
+    -webkit-backdrop-filter: blur(21px) saturate(198%);
+    backdrop-filter: blur(21px) saturate(198%);
+    transition: 0.3s;
+  }
+
+  .link-card a:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+
+  h2 {
+    margin: 0;
+    transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  p {
+    margin-top: 0.75rem;
+    margin-bottom: 0;
+  }
+
+  h2 span {
+    display: inline-block;
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .link-card a:is(:focus) {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+  }
+
+  .link-card:is(:hover, :focus-within) {
+    background-position: 0;
+  }
+
+  .link-card:is(:hover, :focus-within) h2 {
+    color: var(--primary-color);
+  }
+
+  .link-card:is(:hover, :focus-within) h2 span {
+    will-change: transform;
+    transform: translateX(2px);
+  }
+
+  [astro-icon] {
+    height: 1.5rem;
+    width: 1.5rem;
+    color: #321263;
+  }
+</style>
