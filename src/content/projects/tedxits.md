@@ -1,6 +1,6 @@
 ---
 title: TEDxITS
-href: http://tedxits.org
+href: https://2022.tedxits.org
 cover: /tedxits/main-page.png
 description: tedxits.org is a website for TEDxITS event, local, a nonprofit organization devoted to Ideas Worth Spreading. this web was made using Next.Js, Tailwind CSS, Typescript, and Node Js (Express) backend
 stack: cib:next-js, cib:typescript, file-icons:tailwind, akar-icons:node-fill
