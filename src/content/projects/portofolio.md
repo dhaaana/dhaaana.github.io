@@ -1,6 +1,6 @@
 ---
 title: Personal Portfolio
-href: kantin-kejujuran
+href: /
 cover: portofolio/main-page.png
 description: This portfolio web was made to showcase my experiences, thougts, and projects. Created using Astro and Preact to achieve faster experience and smaller bundle size
 stack: simple-icons:astro, akar-icons:react-fill, logos:preact, file-icons:tailwind

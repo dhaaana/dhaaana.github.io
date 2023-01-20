@@ -1,10 +1,10 @@
 ---
-title: TEDxITS
-href: https://2022.tedxits.org
-cover: /tedxits/main-page.png
-description: tedxits.org is a website for TEDxITS event, a local nonprofit organization devoted to Ideas Worth Spreading. this web was made using Next.Js, Tailwind CSS, Typescript, and Node Js (Express) backend
-stack: cib:next-js, cib:typescript, file-icons:tailwind, akar-icons:node-fill
-isFeatured: true
+title: X-Ray Checker
+href: https://github.com/dhaaana/fp-analitika-bisnis
+cover: xray-checker/web.png
+description: xray-checker.vercel.app is a web app that can diagnose lungs x-ray picture into three categories (normal, covid, and pneumonia). This app was developed as part of a Business Analytics subject final project.
+isFeatured: false
+stack: cib:next-js, cib:typescript, file-icons:tailwind, cib:python
 ---
 
 # Kantin Kejujuran SD SEA Sentosa

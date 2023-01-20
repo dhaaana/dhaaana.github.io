@@ -1,10 +1,10 @@
 ---
-title: TEDxITS
-href: https://2022.tedxits.org
-cover: /tedxits/main-page.png
-description: tedxits.org is a website for TEDxITS event, a local nonprofit organization devoted to Ideas Worth Spreading. this web was made using Next.Js, Tailwind CSS, Typescript, and Node Js (Express) backend
-stack: cib:next-js, cib:typescript, file-icons:tailwind, akar-icons:node-fill
-isFeatured: true
+title: X-Ray Checker Model
+href: https://www.kaggle.com/code/arifnuriman/final-project-ab-kelompok-5
+cover: xray-checker/model.png
+description: This is the machine learning models that used in xray-checker.vercel.app. This models utilize python library such as sklearn, tensorflow, and keras.
+isFeatured: false
+stack: cib:python, cib:jupyter, cib:tensorflow  
 ---
 
 # Kantin Kejujuran SD SEA Sentosa

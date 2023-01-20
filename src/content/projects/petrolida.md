@@ -1,10 +1,9 @@
 ---
-title: TEDxITS
-href: https://2022.tedxits.org
-cover: /tedxits/main-page.png
-description: tedxits.org is a website for TEDxITS event, a local nonprofit organization devoted to Ideas Worth Spreading. this web was made using Next.Js, Tailwind CSS, Typescript, and Node Js (Express) backend
-stack: cib:next-js, cib:typescript, file-icons:tailwind, akar-icons:node-fill
-isFeatured: true
+title: Petrolida 2023
+href: https://petrolida.com
+cover: petrolida/main-page.png
+description: petrolida.com is a website for Petrolida 2023 event. Petrolida is the biggest annual event held by SPE ITS Student Chapter. this web was made using Next.Js, Tailwind CSS, Typescript, and Laravel backend
+stack: cib:next-js, cib:typescript, file-icons:tailwind, cib:laravel
 ---
 
 # Kantin Kejujuran SD SEA Sentosa
